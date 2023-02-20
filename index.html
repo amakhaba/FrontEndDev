@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning View </title>
+    <script src="https://unpkg.com/vue@3.0.2/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>
+        Hello View
+    </h1>
+    <div id="app">
+        <div v-if="showBooks">
+            <p>{{ title }} - {{ author }} - {{ age }}</p>
+            <button v-on:click="age++">Increase Age</button>    
+            <button v-on:click="age--">Decrease Age</button>  
+            <button @click="changeTitle('Given')"> Change Book Title</button>  
+        </div>
+        <button @click='getshowBooks'>
+            <span v:if="showBooks">Hide Books</span>
+            <span v:else>Show Books</span>         
+        </button>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>
